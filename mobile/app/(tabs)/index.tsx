@@ -4,6 +4,7 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { Collapsible } from '@/components/Collapsible';
 
 export default function HomeScreen() {
   return (
@@ -11,14 +12,28 @@ export default function HomeScreen() {
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
+          source={require('@/assets/images/react-logo.png')}
           style={styles.reactLogo}
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+        <ThemedText type="title">Seja Bem-Vindo(a)! 👤</ThemedText>
       </ThemedView>
+      <ThemedView style={styles.collapsibleContainer}>
+      <Collapsible title="Perfil😶">
+              <ThemedText>
+                <ThemedText>Nome: User </ThemedText> {''}
+                 <ThemedText>Email: user@gmail.com   --</ThemedText> 
+                  <ThemedText> CPF: 000-000-000-00</ThemedText> 
+              </ThemedText>
+            </Collapsible>
+
+            <Collapsible title="Saldo💰">
+              <ThemedText>
+                <ThemedText type="defaultSemiBold">$ 567,93</ThemedText>
+              </ThemedText>
+            </Collapsible>
+</ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
@@ -60,15 +75,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
+  collapsibleContainer: {
+    marginVertical: 16,
+    paddingHorizontal: 42,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   stepContainer: {
     gap: 8,
     marginBottom: 8,
   },
   reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
+    height: 200,
+    width: 340,
+    bottom: -40,
+    left: 35,
+  alignItems: 'center',
+  resizeMode: 'contain'    
+  }, 
+
 });
