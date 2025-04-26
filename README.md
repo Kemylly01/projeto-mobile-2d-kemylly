@@ -1,2 +1,2 @@
 # projeto-mobile-2d-kemylly
-![prints](assets/images/1.jpeg)
+![prints](mobile/assets/images/1.jpeg)
